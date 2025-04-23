@@ -14,7 +14,7 @@ export default function RootLayout({
           <AnnoucmentBar Message={"Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!"}></AnnoucmentBar>
         <Header/>
         </header>
-        <main className="main mx-32 h-[90vh] mt-6">
+        <main className="main mx-32 h-min-[90vh] mt-6">
         {children}
         </main>
         <footer>

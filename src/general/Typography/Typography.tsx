@@ -7,7 +7,7 @@ type ResponsiveProp<T> = T | Partial<Record<Breakpoint, T>>;
 type TypographyProps = {
   children: ReactNode;
   as?: ElementType;
-  fontSize?: ResponsiveProp<'xsm' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | '3xl' | '4xl'>;
+  fontSize?: ResponsiveProp<'xxsm'|'xsm' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | '3xl' | '4xl'>;
   color?: ResponsiveProp<string>;
   weight?: ResponsiveProp<'light' | 'normal' | 'medium' | 'semibold' | 'bold'>;
   lineHeight?: ResponsiveProp<'none' | 'tight' | 'snug' | 'normal' | 'relaxed' | 'loose'>;
@@ -54,6 +54,7 @@ const Typography = ({
   };
 
   const sizeClasses = generateResponsiveClasses(fontSize, {
+    xxsm:"text-[0.65rem]",
     xsm: 'text-xs',
     sm: 'text-sm',
     md: 'text-base',
