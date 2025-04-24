@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { SiVisa, SiMastercard, SiPaypal } from "react-icons/si";
 import { HiOutlineMail } from "react-icons/hi";
+import Typography from "@/general/Typography/Typography";
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
@@ -101,7 +102,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">Download App</h3>
-              <p className="text-gray-400">Save $3 with App New User Only</p>
+              <Typography color={""} className="text-gray-400">Save $3 with App New User Only</Typography>
             </div>
             <div className="flex gap-4">
               <button className="flex items-center gap-3 bg-gradient-to-r from-gray-800 to-gray-900 px-5 py-3 rounded-xl hover:from-gray-700 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border border-gray-700">
@@ -110,9 +111,8 @@ const Footer = () => {
                   <span className="text-xs font-light text-gray-400 tracking-wide">
                     Download on the
                   </span>
-                  <p className="font-semibold text-gray-100 tracking-tight">
-                    App Store
-                  </p>
+                  <Typography color={""}>App Store</Typography>
+
                 </div>
               </button>
 
@@ -122,9 +122,7 @@ const Footer = () => {
                   <span className="text-xs font-light text-gray-400 tracking-wide">
                     Get it on
                   </span>
-                  <p className="font-semibold text-gray-100 tracking-tight">
-                    Google Play
-                  </p>
+                  <Typography color={""}>Google Play</Typography>
                 </div>
               </button>
             </div>
@@ -149,7 +147,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-8 text-center text-gray-400">
-          <p>© 2024 Techistan. All rights reserved.</p>
+          <Typography color={""} className="text-gray-400">© 2024 Techistan. All rights reserved.</Typography>
         </div>
       </div>
     </footer>

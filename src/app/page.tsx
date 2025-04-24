@@ -1,3 +1,4 @@
+"use client"
 import CategoryList from "@/components/CategoryList/Index";
 import FlashSales from "@/components/FlashSalesTimer/Index";
 import Product from "@/components/Product/Index";
@@ -5,6 +6,8 @@ import PromotionalSlider from "@/components/PromotionalSlider/Index";
 import Typography from "@/general/Typography/Typography";
 import ProductList from "@/components/ProductSlider/Index";
 import PageWrapper from "@/general/PageChangeAnimation/Index";
+import Button from "@/components/Button/Index";
+import { useRouter } from "next/navigation";
 //Initial Data
 //Image List
 const ImageListData=[
@@ -138,8 +141,12 @@ const ProductListData = [
 ];
 //Sales End Time
 const saleEnds = "2025-05-01T00:00:00Z";
-
+//View All Products Button Function
 export default function Home() {
+  const router=useRouter();
+  const ViewAllProducts=()=>{
+  router.push("/products");
+  }
   return (
     <PageWrapper>
     <div className="Home">
@@ -150,14 +157,26 @@ export default function Home() {
         ImageList={ImageListData}
       />
       </section>
-      <section className="Flash_Sales my-26">
+      <section className="Flash_Sales my-24">
         <div className="Today's flex items-center gap-4">
           <div className="w-4 h-8 bg-[#DD4444] rounded-sm"></div>
           <Typography fontSize={"sm"} weight={"bold"} color="" className="text-[#DD4444]">Today's</Typography>
         </div>
+        
         <FlashSales targetDate={saleEnds} ></FlashSales>
         <ProductList products={ProductListData}></ProductList>
+        <div className="button flex justify-center mt-6">
+        <Button title={"View All Products"} onClick={ViewAllProducts}></Button>
+        </div>
       </section>
+      <div className="border-t border-gray-300 my-2"></div>
+      <section className="Browse_By_Category my-24">
+        <div className="Categories flex items-center gap-4">
+          <div className="w-4 h-8 bg-[#DD4444] rounded-sm"></div>
+          <Typography fontSize={"sm"} weight={"bold"} color="" className="text-[#DD4444]">Categories</Typography>
+        </div>
+        <Typography fontSize="xxl" weight="bold" className="my-4">Browse By Categories</Typography>
+        </section>
     </div>
     </PageWrapper>
   );
