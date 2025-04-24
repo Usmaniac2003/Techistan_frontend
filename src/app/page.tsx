@@ -4,6 +4,7 @@ import Product from "@/components/Product/Index";
 import PromotionalSlider from "@/components/PromotionalSlider/Index";
 import Typography from "@/general/Typography/Typography";
 import ProductList from "@/components/ProductSlider/Index";
+import PageWrapper from "@/general/PageChangeAnimation/Index";
 //Initial Data
 //Image List
 const ImageListData=[
@@ -140,6 +141,7 @@ const saleEnds = "2025-05-01T00:00:00Z";
 
 export default function Home() {
   return (
+    <PageWrapper>
     <div className="Home">
      <section className="Promotion_and_Categories flex">
       <CategoryList categories={categories}></CategoryList>
@@ -157,5 +159,6 @@ export default function Home() {
         <ProductList products={ProductListData}></ProductList>
       </section>
     </div>
+    </PageWrapper>
   );
 }
