@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 
 export default function ProductsByCategory() {
    const searchParams = useSearchParams();
-    const searchQuery = searchParams.get('q') || '';
+    const searchQuery = searchParams.get('category') || '';
   return (
     <>
     <PageWrapper>
