@@ -18,12 +18,12 @@ const Footer = () => {
             <h2 className="text-2xl font-bold mb-4">Techistan</h2>
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-2">Subscribe</h3>
-              <p className="text-gray-400 mb-3">Get 10% off your first order</p>
+              <Typography color={""} className="text-gray-400 mb-3">Get 10% off your first order</Typography>
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">Subscribe</h3>
-                <p className="text-gray-400 mb-3">
+                <Typography color={""} className="text-gray-400 mb-3">
                   Get 10% off your first order
-                </p>
+                </Typography>
                 <div className="relative max-w-xs">
                   <input
                     type="email"

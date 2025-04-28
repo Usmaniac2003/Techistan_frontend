@@ -19,6 +19,9 @@ import {
 } from "@heroicons/react/24/outline";
 import CategorySalesSlider from "@/components/CategorySalesSlider/Index";
 import ProductGridSlider from "@/components/ProductGridSlider/Index";
+import NewArrivals from "@/components/NewArrivalBanner/Index";
+import PerksFooter from "@/components/PerksFooter/Index";
+import ScrollToTop from "@/components/ScrollToTopButton/Index";
 
 //Initial Data
 //Image List
@@ -324,24 +327,22 @@ const BestSellingProductListData = [
 //Sales End Time
 const saleEnds = "2025-05-01T00:00:00Z";
 //Category Sales Data
-const CategorySalesData=[
+const CategorySalesData = [
   {
-    category:"Laptops & Computers",
+    category: "Laptops & Computers",
     title: "Music Experience",
-    saleEndDate: new Date('2027-12-31'),
+    saleEndDate: new Date("2027-12-31"),
     redirectLink: "/music-products",
-    imageLink: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+    imageLink: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
   },
   {
-    
-    category:"SmartPhones & Tablets",
+    category: "SmartPhones & Tablets",
     title: "Gaming Gear",
-    saleEndDate: new Date('2026-11-30'),
+    saleEndDate: new Date("2026-11-30"),
     redirectLink: "/gaming-products",
-    imageLink: "https://images.unsplash.com/photo-1589254065878-42c9da997008"
+    imageLink: "https://images.unsplash.com/photo-1589254065878-42c9da997008",
   },
-
-]
+];
 //Explore Our Products
 const ExploreOurProductsData = [
   {
@@ -535,6 +536,37 @@ const ExploreOurProductsData = [
     ],
   },
 ];
+//New Arrival Data
+const NewArrivalData = [
+  {
+    title: "Women’s Collections",
+    description: "Featured woman collections that give you another vibe.",
+    redirectLink: "/women-collections",
+    imageUrl:
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "PlayStation 5",
+    description: "Black and White version of the PS5 coming out on sale.",
+    redirectLink: "/ps5",
+    imageUrl:
+      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Speakers",
+    description: "Amazon wireless speakers",
+    redirectLink: "/speakers",
+    imageUrl:
+      "https://images.unsplash.com/photo-1591378603223-e15b45a81640?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Perfume",
+    description: "GUCCI INTENSE OUD EDP",
+    redirectLink: "/perfume",
+    imageUrl:
+      "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
 //View All Products Button Function
 export default function Home() {
   const router = useRouter();
@@ -608,13 +640,13 @@ export default function Home() {
           <ProductList products={BestSellingProductListData}></ProductList>
         </section>
         <section className="Categories_Sale my-16">
-        <CategorySalesSlider
-  autoSlideInterval={8000} // Optional, defaults to 5000ms
-  slides={CategorySalesData}
-/>
+          <CategorySalesSlider
+            autoSlideInterval={8000} // Optional, defaults to 5000ms
+            slides={CategorySalesData}
+          />
         </section>
         <section className="Explore_Our_Products">
-        <div className="Our Products flex items-center gap-4">
+          <div className="Our Products flex items-center gap-4">
             <div className="w-4 h-8 bg-[#DD4444] rounded-sm"></div>
             <Typography
               fontSize={"sm"}
@@ -628,8 +660,31 @@ export default function Home() {
           <Typography fontSize="xxl" weight="bold" className="my-6">
             Explore Our Products
           </Typography>
-          <ProductGridSlider products={ExploreOurProductsData}></ProductGridSlider>
+          <ProductGridSlider
+            products={ExploreOurProductsData}
+          ></ProductGridSlider>
         </section>
+        <section className="New_Arrival my-16">
+          <div className="New_Arrival flex items-center gap-4">
+            <div className="w-4 h-8 bg-[#DD4444] rounded-sm"></div>
+            <Typography
+              fontSize={"sm"}
+              weight={"bold"}
+              color=""
+              className="text-[#DD4444]"
+            >
+              Featured
+            </Typography>
+          </div>
+          <Typography fontSize="xxl" weight="bold" className="my-6">
+            New Arrival
+          </Typography>
+          <NewArrivals items={NewArrivalData} />
+        </section>
+        <section className="Perks_Footer my-24">
+        <PerksFooter/>
+        </section>
+        <ScrollToTop/>
       </div>
     </PageWrapper>
   );

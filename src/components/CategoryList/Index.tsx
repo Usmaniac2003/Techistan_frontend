@@ -18,7 +18,7 @@ export default function CategoryList({ categories }) {
               <Typography
                 fontSize="md"
                 lineHeight="loose"
-                className="text-gray-600 hover:underline hover:text-black transition-all duration-300 cursor-pointer"
+                className="text-gray-600 hover:text-black transition-all duration-300 cursor-pointer"
               >
                 {category.title}
               </Typography>
